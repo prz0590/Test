@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			-webkit-perspective: 1000px; /*设置3D元素与3D页面间的距离*/
+            perspective: 1000px;/*设置3D元素与3D页面间的距离*/
+		}
+		.div{
+			width: 2em;
+			-webkit-transform-style: preserve-3d;  /* 设置元素在3d视图里面显示 */
+            transform-style: preserve-3d;    /*设置元素在3d视图里面显示*/
+            position: relative;
+            margin: 1.5em auto;
+            font-size: 80px;
+            transform:rotateX(-30deg) rotateY(30deg);
+		}
+		.div > div{
+			position: absolute;
+			width: 2em;
+			height: 2em;
+			border: 1px solid #999;
+			background: rgba(255,0,0,.1);
+			color: green;
+			
+			text-align: center;
+			line-height: 2em;
+
+		}
+		.front{
+			transform: translateZ(1em);
+		}
+		.back{
+			transform: translateZ(-1em);
+		}
+		.left{
+			transform: rotateY(-90deg) translateZ(1em);
+		}
+		.right{
+			transform: rotateY(90deg) translateZ(1em);
+		}
+		.top{
+			transform: rotateX(90deg) translateZ(1em);
+		}
+		.bottom{
+			transform: rotateX(-90deg) translateZ(1em);
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="div">
+		<div class="front">1</div>
+		<div class="back">2</div>
+		<div class="left">3</div>
+		<div class="right">4</div>
+		<div class="top">5</div>
+		<div class="bottom">6</div>
+	</div>
+</body>
+</html>
